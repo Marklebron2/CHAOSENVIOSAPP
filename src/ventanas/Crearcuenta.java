@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
 
-public class Crearcuenta extends javax.swing.JFrame {
+public class Crearcuenta extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Crearcuenta
