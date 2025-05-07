@@ -15,6 +15,8 @@ public class Ventanamultiple extends javax.swing.JFrame {
      */
     public Ventanamultiple() {
         initComponents();
+        this.setExtendedState(Ventanamultiple.MAXIMIZED_BOTH);
+        this.setTitle("Sistema de ventas y pedidos - CHAOSdrop");
     }
 
     /**
@@ -26,7 +28,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -34,8 +36,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
         editMenu = new javax.swing.JMenu();
         deleteMenuItem = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -51,7 +51,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        desktopPane.setBackground(new java.awt.Color(8, 9, 39));
+        escritorio.setBackground(new java.awt.Color(8, 9, 39));
 
         fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/filesiconos/Historial pedidos.png2.png"))); // NOI18N
         fileMenu.setMnemonic('f');
@@ -87,17 +87,14 @@ public class Ventanamultiple extends javax.swing.JFrame {
         helpMenu.setMnemonic('h');
         helpMenu.setText("Registrar Usuario");
         helpMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
-
+        helpMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpMenuActionPerformed(evt);
+            }
+        });
         menuBar.add(helpMenu);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Reporte1.png"))); // NOI18N
         jMenu4.setText("Reportes");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -112,6 +109,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         menuBar.add(jMenu4);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Configuracion2.png"))); // NOI18N
         jMenu1.setText("Configuración");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -123,6 +121,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegacion1.png"))); // NOI18N
         jMenu2.setText("Navegación y utilidades");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -146,11 +145,11 @@ public class Ventanamultiple extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1235, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1235, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
         );
 
         pack();
@@ -159,6 +158,14 @@ public class Ventanamultiple extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void helpMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpMenuActionPerformed
+        RegistrodeUsuario form= new  RegistrodeUsuario();
+        escritorio.add(form);
+        form.toFront ();
+        form.setVisible(true);
+        
+    }//GEN-LAST:event_helpMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,11 +203,9 @@ public class Ventanamultiple extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
