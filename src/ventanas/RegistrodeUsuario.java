@@ -1,6 +1,10 @@
 package ventanas;
 
-public class RegistrodeUsuario extends javax.swing.JInternalFrame {
+
+import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+
+public class RegistrodeUsuario extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistrodeUsuario
@@ -41,18 +45,18 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         btnregistrarse = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen Sign up 1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 25)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 35)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CREAR CUENTA");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 2, 16)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 2, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Regístrate para continuar.");
 
@@ -135,11 +139,11 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37))))
+                            .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(46, 46, 46))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +179,7 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 2, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 2, 16)); // NOI18N
         jLabel11.setText("¿Ya tienes cuenta? Inicia sesión.");
         jLabel11.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -207,11 +211,11 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(btnregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,11 +226,11 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(btnregistrarse))
-                .addGap(21, 21, 21))
+                    .addComponent(btnregistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -234,23 +238,23 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(99, 99, 99)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 185, Short.MAX_VALUE))
+                    .addComponent(jLabel3))
+                .addGap(0, 451, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(67, 67, 67)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(40, 40, 40)
+                .addGap(37, 37, 37)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -289,6 +293,28 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     private void btnregistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarseActionPerformed
+       
+        String nombre = txtnombre.getText();
+        String apellido = txtapellido.getText();
+        String usuario = txtusuario.getText();
+        String telefono = txtcelular.getText();
+        String correo = txtcorreo.getText();
+        String contrasena = new String(jContraseña.getPassword());
+        String confirmar = new String(jConfirmacion.getPassword());
+
+        // Validación de campos vacíos
+    if (nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() ||
+        correo.isEmpty() || telefono.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+        return;
+    }
+    
+      // Validar coincidencia de contraseñas
+    if (!contrasena.equals(confirmar)) {
+        JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden.");
+        return;
+    }
+ 
 
     }//GEN-LAST:event_btnregistrarseActionPerformed
 
@@ -297,13 +323,13 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel11AncestorAdded
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-    new Iniciodesesion().setVisible(true); // Abre la ventana de inicio de sesión
-    this.dispose(); // Cierra la ventana de registro
- 
-    
+        new Iniciodesesion().setVisible(true); // Abre la ventana de inicio de sesión
+        this.dispose(); // Cierra la ventana de registro
+
+
     }//GEN-LAST:event_jLabel11MouseClicked
 
- /**
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -339,7 +365,6 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
     }
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrarse;
     private static javax.swing.JPasswordField jConfirmacion;
@@ -365,4 +390,3 @@ public class RegistrodeUsuario extends javax.swing.JInternalFrame {
     private static javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
-
