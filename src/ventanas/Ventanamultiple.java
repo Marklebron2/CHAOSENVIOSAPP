@@ -16,7 +16,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
     public Ventanamultiple() {
         initComponents();
         this.setExtendedState(Ventanamultiple.MAXIMIZED_BOTH);
-        this.setTitle("Sistema de ventas y pedidos - CHAOSdrop");
+        this.setTitle("Sistema de ventas y pedidos - CHAOSdrop");l
     }
 
     /**
@@ -126,6 +126,11 @@ public class Ventanamultiple extends javax.swing.JFrame {
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem7.setText("Volver al Inicio");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setText("Ayuda/Intrucciones de uso");
@@ -166,6 +171,10 @@ public class Ventanamultiple extends javax.swing.JFrame {
         form.setVisible(true);
         
     }//GEN-LAST:event_helpMenuActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments
