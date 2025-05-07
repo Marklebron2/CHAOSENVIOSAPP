@@ -35,14 +35,11 @@ public class Ventanamultiple extends javax.swing.JFrame {
         saveMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
@@ -83,10 +80,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
         cutMenuItem.setText("Catálogo");
         editMenu.add(cutMenuItem);
 
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem1.setText("Lista de productos");
-        editMenu.add(jMenuItem1);
-
         menuBar.add(editMenu);
 
         helpMenu.setMnemonic('h');
@@ -97,11 +90,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Generar reporte");
         helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("Exportar PDF/EXCEL");
-        helpMenu.add(aboutMenuItem);
 
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem2.setText("Productos mas vendidos");
@@ -115,10 +103,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
         jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem3.setText("Perfil");
         jMenu1.add(jMenuItem3);
-
-        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jMenuItem4.setText("Cambiar contraseña");
-        jMenu1.add(jMenuItem4);
 
         menuBar.add(jMenu1);
 
@@ -210,7 +194,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenu editMenu;
@@ -220,10 +203,8 @@ public class Ventanamultiple extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
