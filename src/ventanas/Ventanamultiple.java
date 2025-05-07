@@ -16,8 +16,9 @@ public class Ventanamultiple extends javax.swing.JFrame {
     public Ventanamultiple() {
         initComponents();
         this.setExtendedState(Ventanamultiple.MAXIMIZED_BOTH);
-        this.setTitle("Sistema de ventas y pedidos - CHAOSdrop");l
+        this.setTitle("Sistema de ventas y pedidos - CHAOSdrop");
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -94,7 +95,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
         });
         menuBar.add(helpMenu);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Reporte1.png"))); // NOI18N
         jMenu4.setText("Reportes");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -109,7 +109,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         menuBar.add(jMenu4);
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Configuracion2.png"))); // NOI18N
         jMenu1.setText("Configuración");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -121,7 +120,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         menuBar.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/navegacion1.png"))); // NOI18N
         jMenu2.setText("Navegación y utilidades");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -154,7 +152,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
         );
 
         pack();
