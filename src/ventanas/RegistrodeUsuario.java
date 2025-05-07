@@ -1,8 +1,10 @@
 package ventanas;
 
-
+import chaosenvios.conexion;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
 
 public class RegistrodeUsuario extends javax.swing.JFrame {
 
@@ -23,7 +25,6 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -42,15 +43,11 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jContraseña = new javax.swing.JPasswordField();
         jConfirmacion = new javax.swing.JPasswordField();
-        jLabel11 = new javax.swing.JLabel();
         btnregistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Imagen Sign up 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 35)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,23 +176,6 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 2, 16)); // NOI18N
-        jLabel11.setText("¿Ya tienes cuenta? Inicia sesión.");
-        jLabel11.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jLabel11AncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-
         btnregistrarse.setBackground(new java.awt.Color(0, 0, 0));
         btnregistrarse.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnregistrarse.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,9 +191,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnregistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -227,9 +205,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(btnregistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
+                .addComponent(btnregistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -238,8 +214,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99)
+                .addGap(905, 905, 905)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
@@ -248,14 +223,14 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addGap(37, 37, 37)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(278, 278, 278))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -293,41 +268,49 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     private void btnregistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarseActionPerformed
-       
-        String nombre = txtnombre.getText();
-        String apellido = txtapellido.getText();
-        String usuario = txtusuario.getText();
-        String telefono = txtcelular.getText();
-        String correo = txtcorreo.getText();
-        String contrasena = new String(jContraseña.getPassword());
-        String confirmar = new String(jConfirmacion.getPassword());
+// Obtener valores de los campos
+        String nombre = txtnombre.getText().trim();
+        String apellido = txtapellido.getText().trim();
+        String usuario = txtusuario.getText().trim();
+        String telefono = txtcelular.getText().trim();
+        String correo = txtcorreo.getText().trim();
+        String contrasena = new String(jContraseña.getPassword()).trim();
+        String confirmar = new String(jConfirmacion.getPassword()).trim();
 
-        // Validación de campos vacíos
-    if (nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() ||
-        correo.isEmpty() || telefono.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
-        return;
-    }
-    
-      // Validar coincidencia de contraseñas
-    if (!contrasena.equals(confirmar)) {
-        JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden.");
-        return;
-    }
- 
+// Validar que todos los campos estén llenos
+        if (nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty()
+                || telefono.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+            return;
+        }
+
+// Validar que las contraseñas coincidan
+        if (!confirmar.equals(contrasena)) {
+            JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden.");
+            return;
+        }
+
+// Insertar en la base de datos
+        try (Connection conn = conexion.conectar()) {
+            String sql = "INSERT INTO usuarios (nombre, apellido, usuario, telefono, correo, contrasena) VALUES (?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, nombre);
+            ps.setString(2, apellido);
+            ps.setString(3, usuario);
+            ps.setString(4, telefono);
+            ps.setString(5, correo);
+            ps.setString(6, contrasena);
+            ps.executeUpdate();
+
+            JOptionPane.showMessageDialog(this, "Usuario registrado correctamente.");
+            this.dispose(); // Cierra ventana de registro
+            new Iniciodesesion().setVisible(true); // Abre ventana de inicio de sesión
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al registrar: " + e.getMessage());
+        }
 
     }//GEN-LAST:event_btnregistrarseActionPerformed
-
-    private void jLabel11AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel11AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel11AncestorAdded
-
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        new Iniciodesesion().setVisible(true); // Abre la ventana de inicio de sesión
-        this.dispose(); // Cierra la ventana de registro
-
-
-    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -343,16 +326,24 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Iniciodesesion.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Iniciodesesion.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Iniciodesesion.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Iniciodesesion.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -369,9 +360,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnregistrarse;
     private static javax.swing.JPasswordField jConfirmacion;
     private static javax.swing.JPasswordField jContraseña;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
