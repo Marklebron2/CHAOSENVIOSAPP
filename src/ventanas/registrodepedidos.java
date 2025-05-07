@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class registrodepedidos extends javax.swing.JFrame {
+public class registrodepedidos extends javax.swing.JInternalFrame {
 
     public static Connection getConnection() throws SQLException {
         String url = "jdbc:mysql://localhost:3306/tu_base_de_datos";
