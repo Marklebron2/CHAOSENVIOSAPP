@@ -1,3 +1,4 @@
+
 package ventanas;
 
 import chaosenvios.conexion;
@@ -6,12 +7,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Connection;
 
-public class RegistrodeUsuario extends javax.swing.JFrame {
+public class Crearcuenta extends javax.swing.JFrame {
 
     /**
-     * Creates new form RegistrodeUsuario
+     * Creates new form Crearcuenta
      */
-    public RegistrodeUsuario() {
+    public Crearcuenta() {
         initComponents();
     }
 
@@ -45,7 +46,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         jConfirmacion = new javax.swing.JPasswordField();
         btnregistrarse = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -213,39 +214,35 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(905, 905, 905)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(739, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
-                .addGap(0, 451, Short.MAX_VALUE))
+                .addGap(113, 113, 113))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
-                .addGap(37, 37, 37)
+                .addGap(50, 50, 50)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(278, 278, 278))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -268,7 +265,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcorreoActionPerformed
 
     private void btnregistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarseActionPerformed
-// Obtener valores de los campos
+        // Obtener valores de los campos
         String nombre = txtnombre.getText().trim();
         String apellido = txtapellido.getText().trim();
         String usuario = txtusuario.getText().trim();
@@ -277,20 +274,20 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         String contrasena = new String(jContraseña.getPassword()).trim();
         String confirmar = new String(jConfirmacion.getPassword()).trim();
 
-// Validar que todos los campos estén llenos
+        // Validar que todos los campos estén llenos
         if (nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty()
-                || telefono.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
+            || telefono.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
             return;
         }
 
-// Validar que las contraseñas coincidan
+        // Validar que las contraseñas coincidan
         if (!confirmar.equals(contrasena)) {
             JOptionPane.showMessageDialog(this, "Las contraseñas no coinciden.");
             return;
         }
 
-// Insertar en la base de datos
+        // Insertar en la base de datos
         try (Connection conn = conexion.conectar()) {
             String sql = "INSERT INTO usuarios (nombre, apellido, usuario, telefono, correo, contrasena) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -304,12 +301,11 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Usuario registrado correctamente.");
             this.dispose(); // Cierra ventana de registro
-            new Iniciodesesion().setVisible(true); // Abre ventana de inicio de sesión
+            new Ventanamultiple().setVisible(true); // Abre ventana de inicio de sesión
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Error al registrar: " + e.getMessage());
         }
-
     }//GEN-LAST:event_btnregistrarseActionPerformed
 
     /**
@@ -326,35 +322,26 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Crearcuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Crearcuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
+            java.util.logging.Logger.getLogger(Crearcuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Iniciodesesion.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Crearcuenta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Iniciodesesion().setVisible(true);
+                new Crearcuenta().setVisible(true);
             }
         });
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrarse;
