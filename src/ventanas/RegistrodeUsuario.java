@@ -300,6 +300,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     new Iniciodesesion().setVisible(true); // Abre la ventana de inicio de sesión
     this.dispose(); // Cierra la ventana de registro
 } 
+    
     }//GEN-LAST:event_jLabel11MouseClicked
 
 /**
@@ -348,6 +349,7 @@ public static void main(String args[]) {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrarse;

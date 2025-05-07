@@ -30,30 +30,36 @@ public class Ventanamultiple extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
         deleteMenuItem = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         desktopPane.setBackground(new java.awt.Color(8, 9, 39));
 
+        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/filesiconos/Historial pedidos.png2.png"))); // NOI18N
         fileMenu.setMnemonic('f');
-        fileMenu.setText("Historial Pedidos");
+        fileMenu.setText(" Pedidos");
         fileMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Pedidos");
+        exitMenuItem.setText("Historial pedido");
         exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitMenuItemActionPerformed(evt);
@@ -61,30 +67,23 @@ public class Ventanamultiple extends javax.swing.JFrame {
         });
         fileMenu.add(exitMenuItem);
 
+        jMenuItem5.setText("Seguimiento pedido");
+        fileMenu.add(jMenuItem5);
+
         menuBar.add(fileMenu);
 
+        editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/filesiconos/registrar pedido1.png"))); // NOI18N
         editMenu.setMnemonic('e');
-        editMenu.setText("Registrar Pedidos");
+        editMenu.setText("Gestión Productos");
         editMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
-
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
-
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
-
         deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
+        deleteMenuItem.setText("Ver catalogo");
         editMenu.add(deleteMenuItem);
 
         menuBar.add(editMenu);
 
+        helpMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/filesiconos/registrar usuario1.png"))); // NOI18N
         helpMenu.setMnemonic('h');
         helpMenu.setText("Registrar Usuario");
         helpMenu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -99,24 +98,47 @@ public class Ventanamultiple extends javax.swing.JFrame {
 
         menuBar.add(helpMenu);
 
-        jMenu1.setText("Seguimiento Pedido");
+        jMenu4.setText("Reportes");
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jMenuItem3.setText("Generar reporte");
+        jMenu4.add(jMenuItem3);
+
+        jMenuItem4.setText("Productos mas vendido");
+        jMenu4.add(jMenuItem4);
+
+        jMenuItem6.setText("Exportar PDF/EXCEL");
+        jMenu4.add(jMenuItem6);
+
+        menuBar.add(jMenu4);
+
+        jMenu1.setText("Configuración");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jMenuItem1.setText("Perfil");
+        jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Cambiar contraseña");
+        jMenu1.add(jMenuItem2);
+
         menuBar.add(jMenu1);
 
-        jMenu3.setText("Ayuda");
-        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenu2.setText("Navegación y utilidades");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem1.setText("Acerca de...");
-        jMenu3.add(jMenuItem1);
+        jMenuItem7.setText("Volver al Inicio");
+        jMenu2.add(jMenuItem7);
 
-        jMenuItem2.setText("Ayuda");
-        jMenu3.add(jMenuItem2);
+        jMenuItem8.setText("Ayuda/Intrucciones de uso");
+        jMenu2.add(jMenuItem8);
 
-        menuBar.add(jMenu3);
+        jMenuItem9.setText("Cerrar Sesión");
+        jMenu2.add(jMenuItem9);
 
-        jMenu4.setText("Cerrar Sesión");
-        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        menuBar.add(jMenu4);
+        jMenuItem10.setText("Salir de la aplicación");
+        jMenu2.add(jMenuItem10);
+
+        menuBar.add(jMenu2);
 
         setJMenuBar(menuBar);
 
@@ -128,7 +150,7 @@ public class Ventanamultiple extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
         );
 
         pack();
@@ -176,8 +198,6 @@ public class Ventanamultiple extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
@@ -185,12 +205,19 @@ public class Ventanamultiple extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem pasteMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }
