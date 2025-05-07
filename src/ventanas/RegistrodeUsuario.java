@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package ventanas;
 
-/**
- *
- * @author sarah
- */
 public class RegistrodeUsuario extends javax.swing.JFrame {
 
     /**
@@ -185,11 +177,30 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Emoji", 2, 14)); // NOI18N
         jLabel11.setText("¿Ya tienes cuenta? Inicia sesión.");
+        jLabel11.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel11AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         btnregistrarse.setBackground(new java.awt.Color(0, 0, 0));
         btnregistrarse.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnregistrarse.setForeground(new java.awt.Color(255, 255, 255));
         btnregistrarse.setText("Registrarse");
+        btnregistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnregistrarseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -224,7 +235,7 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 943, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -277,10 +288,24 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcorreoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    private void btnregistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarseActionPerformed
+
+    }//GEN-LAST:event_btnregistrarseActionPerformed
+
+    private void jLabel11AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel11AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel11AncestorAdded
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    new Iniciodesesion().setVisible(true); // Abre la ventana de inicio de sesión
+    this.dispose(); // Cierra la ventana de registro
+} 
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -291,16 +316,28 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-                }
+
+}
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistrodeUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistrodeUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistrodeUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistrodeUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RegistrodeUsuario.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(RegistrodeUsuario.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(RegistrodeUsuario.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(RegistrodeUsuario.class  
+
+.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -314,8 +351,8 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregistrarse;
-    private javax.swing.JPasswordField jConfirmacion;
-    private javax.swing.JPasswordField jContraseña;
+    private static javax.swing.JPasswordField jConfirmacion;
+    private static javax.swing.JPasswordField jContraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -330,10 +367,11 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txtapellido;
-    private javax.swing.JTextField txtcelular;
-    private javax.swing.JTextField txtcorreo;
-    private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtusuario;
+    private static javax.swing.JTextField txtapellido;
+    private static javax.swing.JTextField txtcelular;
+    private static javax.swing.JTextField txtcorreo;
+    private static javax.swing.JTextField txtnombre;
+    private static javax.swing.JTextField txtusuario;
     // End of variables declaration//GEN-END:variables
 }
+
